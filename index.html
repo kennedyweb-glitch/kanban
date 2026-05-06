@@ -77,7 +77,10 @@
                 @click="openModal(item)"
               >
                 <div class="card-title" x-text="item['Contact Name:']"></div>
-                <div class="card-subtitle" x-text="item[''] || ''"></div>
+                <div
+                  class="card-subtitle"
+                  x-text="formatDate(item[''] || '')"
+                ></div>
                 <div
                   class="card-link"
                   x-text="truncateUrl(item['URL link for page that needs to be edited/updated:'])"
@@ -108,7 +111,10 @@
                 @click="openModal(item)"
               >
                 <div class="card-title" x-text="item['Contact Name:']"></div>
-                <div class="card-subtitle" x-text="item[''] || ''"></div>
+                <div
+                  class="card-subtitle"
+                  x-text="formatDate(item[''] || '')"
+                ></div>
                 <div
                   class="card-link"
                   x-text="truncateUrl(item['URL link for page that needs to be edited/updated:'])"
@@ -127,7 +133,7 @@
             x-sort="deleteItem"
             x-sort:group="'kanban'"
           >
-            <div class="trash-icon">🗑️</div>
+            <div class="trash-icon" x-sort:ignore>🗑️</div>
           </div>
         </div>
       </div>
