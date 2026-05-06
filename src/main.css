@@ -80,6 +80,19 @@ body {
   display: inline-block;
 }
 
+.reload-icon.spinning {
+  animation: spinning 0.3s linear infinite;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Kanban Container */
 .kanban-container {
   display: grid;
@@ -117,6 +130,7 @@ body {
 
 .column-content {
   flex: 1;
+  overflow-x: clip;
   overflow-y: auto;
   padding: 16px;
   display: flex;

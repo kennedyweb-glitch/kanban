@@ -16,7 +16,8 @@
       <header class="kanban-header">
         <h1>Kanban</h1>
         <button @click="refreshSheetData()" class="reload-btn">
-          <span class="reload-icon">↻</span> Reload Sheet
+          <span class="reload-icon" :class="{ 'spinning': isFetching }">↻</span>
+          Reload Sheet
         </button>
       </header>
 

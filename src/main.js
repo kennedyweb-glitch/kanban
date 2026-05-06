@@ -13,12 +13,14 @@ Alpine.data('kanbanApp', () => ({
     data: Alpine.$persist([]).as('kanbanData'),
     notes: Alpine.$persist({}).as('kanbanNotes'),
     selectedItem: null,
+    isFetching: false,
 
     init() {
         this.refreshSheetData()
     },
 
     async refreshSheetData() {
+        this.isFetching = true
         try {
             const response = await fetch(SHEET_URL)
             const text = await response.text()
@@ -28,6 +30,7 @@ Alpine.data('kanbanApp', () => ({
         } catch (error) {
             console.error('Error fetching sheet data:', error)
         }
+        this.isFetching = false
     },
 
     parseSheetData(rows) {
