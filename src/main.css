@@ -371,12 +371,11 @@ body.sorting .card:hover {
 
 .notes-textarea {
   width: 100%;
-  min-height: 120px;
+  min-height: 2lh;
   border: none;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   color: var(--color-text);
-  resize: vertical;
 }
 
 .notes-textarea:focus {

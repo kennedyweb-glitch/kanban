@@ -213,6 +213,7 @@
                 placeholder="Add your notes here..."
                 x-model="notes[selectedItem?.['Edits']]"
                 @change="saveNote(selectedItem)"
+                @input="$el.style.height = 'auto'; $el.style.height = $el.scrollHeight + 'px'"
               ></textarea>
             </div>
           </div>
