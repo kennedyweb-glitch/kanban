@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #f8f8f8;
+  --color-foreground: #0f172a;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-border: rgba(15, 23, 42, 0.12);
+  --color-primary: #0f172a;
+  --color-primary-foreground: #ffffff;
+  --color-muted-foreground: #475569;
+  --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.12);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  }
+
+  body {
+    min-height: 100vh;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto flex min-h-screen w-full max-w-5xl items-center justify-center px-4 py-8 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.28em] text-primary;
+  }
+
+  .counter-shell {
+    @apply w-full;
+  }
+
+  .counter-card {
+    @apply mx-auto flex w-full max-w-xl flex-col items-center rounded-[2rem] border border-border bg-surface p-8 text-center shadow-soft sm:p-10;
+  }
+
+  .counter-value {
+    @apply mt-8 flex h-24 w-24 items-center justify-center rounded-full bg-primary text-4xl font-semibold text-primary-foreground shadow-[0_18px_50px_rgba(15,23,42,0.16)] sm:h-28 sm:w-28 sm:text-5xl;
+  }
+
+  .counter-actions {
+    @apply mt-8 flex flex-wrap items-center justify-center gap-3;
+  }
+
+  .counter-button {
+    @apply inline-flex min-w-28 items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .counter-button-primary {
+    @apply bg-primary text-primary-foreground shadow-soft hover:bg-primary/90;
+  }
+
+  .counter-button-secondary {
+    @apply border border-border bg-surface-muted text-foreground hover:bg-surface;
+  }
+}
